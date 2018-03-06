@@ -1,0 +1,27 @@
+{
+  "name": "js-framework",
+  "version": "1.0.0",
+  "description": "js framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack -p"
+  },
+  "keywords": [
+    "js",
+    "js-framework"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.0.6",
+    "path": "^0.12.7",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "dependencies": {
+    "materialize-css": "^0.100.2"
+  }
+}

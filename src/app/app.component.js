@@ -9,6 +9,10 @@ class AppComponent extends JSFComponent {
 export const appComponent = new AppComponent({
     selector: 'app-root',
     template: `
-        <div><h4>App Component Works!</h4></div>
+        <app-header></app-header>
+        
+        <router-view></router-view>
+        
+        <app-footer></app-footer>
     `
 });

@@ -37,6 +37,10 @@ export class Module {
     }
 
     renderComponent(c) {
+        if (!jsf.isUndefined(c.onInit)) c.onInit();
+
         c.render();
+
+        if (!jsf.isUndefined(c.afterInit)) c.afterInit();
     }
 }

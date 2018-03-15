@@ -1,8 +1,28 @@
-import { JSFComponent } from '../../framework';
+import { JSFComponent, router } from '../../framework';
 
 class HomePageComponent extends JSFComponent {
     constructor(config) {
         super(config)
+    }
+
+    events() {
+        return {
+            'click .js-link': 'goToTabs'
+        }
+    }
+
+    onInit() {
+        console.log('Component init')
+    }
+
+    afterInit() {
+        console.log('Component after render')
+    }
+
+    goToTabs(event) {
+        event.preventDefault();
+
+        router.navigate('tabs')
     }
 }
 
@@ -21,7 +41,7 @@ export const homePageComponent = new HomePageComponent({
               I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
-              <a href="#tabs">This is a link</a>
+              <a class="js-link" href="#">This is a link</a>
             </div>
           </div>
         </div>

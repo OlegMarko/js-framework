@@ -1,4 +1,4 @@
-import { JSFComponent, router } from '../../framework';
+import { JSFComponent, router } from 'framework';
 
 class HomePageComponent extends JSFComponent {
     constructor(config) {

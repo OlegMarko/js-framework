@@ -1,4 +1,4 @@
-import { JSFModule } from '../framework';
+import { JSFModule } from 'framework';
 import { appComponent } from './app.component';
 import { appHeader } from './common/app.header';
 import { appFooter } from './common/app.footer';
@@ -17,5 +17,4 @@ export const appModule = new AppModule({
     ],
     bootstrap: appComponent,
     routes: appRoutes
-
 });

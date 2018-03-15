@@ -1,4 +1,4 @@
-import { JSFComponent } from '../framework';
+import { JSFComponent } from 'framework';
 
 class AppComponent extends JSFComponent {
     constructor(config) {

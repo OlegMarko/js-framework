@@ -1,4 +1,4 @@
-import { JSFComponent } from '../../framework';
+import { JSFComponent } from 'framework';
 
 class NotFoundComponent extends JSFComponent {
     constructor(config) {

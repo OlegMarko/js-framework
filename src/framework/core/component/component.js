@@ -1,4 +1,4 @@
-import { jsf } from '../';
+import { _ } from 'framework';
 
 export class Component {
     constructor(config) {
@@ -16,20 +16,20 @@ export class Component {
 
         this.el.innerHTML = this.template;
 
-        this._initEvents()
+        initEvents.call(this)
     }
+}
 
-    _initEvents() {
-        if (jsf.isUndefined(this.events)) return;
+function initEvents() {
+    if (_.isUndefined(this.events)) return;
 
-        let events = this.events();
+    let events = this.events();
 
-        Object.keys(events).forEach(k => {
-            let listener = k.split(' ');
+    Object.keys(events).forEach(k => {
+        let listener = k.split(' ');
 
-            this.el
-                .querySelector(listener[1])
-                .addEventListener(listener[0], this[events[k]].bind(this))
-        });
-    }
+        this.el
+            .querySelector(listener[1])
+            .addEventListener(listener[0], this[events[k]].bind(this))
+    });
 }

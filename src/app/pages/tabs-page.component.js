@@ -1,4 +1,4 @@
-import { JSFComponent } from '../../framework';
+import { JSFComponent } from 'framework';
 
 class TabsPageComponent extends JSFComponent {
     constructor(config) {

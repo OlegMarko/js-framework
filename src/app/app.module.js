@@ -4,6 +4,7 @@ import { appHeader } from './common/app.header';
 import { appFooter } from './common/app.footer';
 import { appRoutes } from './app.routes';
 import { appHoverDirective } from './common/directives/hover.directive';
+import { appMultiPipe } from './common/pipes/multi.pipe';
 
 class AppModule extends JSFModule {
     constructor(config) {
@@ -20,5 +21,8 @@ export const appModule = new AppModule({
     routes: appRoutes,
     directives: [
         appHoverDirective
+    ],
+    pipes: [
+        appMultiPipe
     ]
 });

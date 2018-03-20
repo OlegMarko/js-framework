@@ -1,4 +1,4 @@
-import { JSFComponent } from 'framework';
+import { $, JSFComponent } from 'framework';
 
 class TabsPageComponent extends JSFComponent {
     constructor(config) {
@@ -12,11 +12,11 @@ class TabsPageComponent extends JSFComponent {
     }
 
     onTabClick({target}) {
-        if (!target.classList.contains('collapsible-header')) return;
+        let $target = $(target);
+        if (!$target.hasClass('collapsible-header')) return;
 
-        this.el.querySelectorAll('.js-tab').forEach(t => t.classList.remove('active'));
-
-        target.parentNode.classList.add('active');
+        this.el.findAll('.js-tab').forEach(e => e.removeClass('active'));
+        $target.parent().addClass('active');
     }
 }
 

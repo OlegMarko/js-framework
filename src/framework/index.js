@@ -5,6 +5,7 @@ import { Pipe as JSFPipe } from 'framework/core/pipes/pipe';
 import { bootstrap } from './core/functions/bootstrap';
 import { $ } from './tools/dom';
 import { _ } from './tools/util';
+import { http } from 'framework/tools/http';
 import { router } from './core/routing/router';
 import { EventEmitter } from 'framework/tools/event-emitter';
 
@@ -16,6 +17,7 @@ export {
     EventEmitter,
     bootstrap,
     _,
+    http,
     $,
     router
 }

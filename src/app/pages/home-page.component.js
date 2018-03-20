@@ -1,11 +1,12 @@
-import { JSFComponent, router } from 'framework';
+import { _, http, JSFComponent, router } from 'framework';
 
 class HomePageComponent extends JSFComponent {
     constructor(config) {
         super(config);
 
         this.data = {
-            title: 'Page Title'
+            title: 'Page Title',
+            ip: 'Loading...'
         }
     }
 
@@ -20,7 +21,14 @@ class HomePageComponent extends JSFComponent {
     }
 
     afterInit() {
-        console.log('Component after render')
+
+        http.get('https://api.ipify.org/?format=json').then(({ip}) => {
+
+            _.delay(2000).then(() => {
+                this.data.ip = ip;
+                this.render()
+            });
+        })
     }
 
     goToTabs(event) {
@@ -41,8 +49,7 @@ export const homePageComponent = new HomePageComponent({
               <span class="card-title">{{ title }}</span>
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p>YOUR IP: {{ ip }}</p>
             </div>
             <div class="card-action">
               <a class="js-link" href="#">This is a link</a>
